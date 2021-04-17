@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>itallq</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="https://lib.baomitu.com/socket.io/4.0.1/socket.io.js"></script>
+		<script src="js/gui.js"></script>
+		<script src="js/socket.js"></script>
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+	</head>
+	<body>
+		<div id="chat_app">
+			<div id="chat_background">
+				<div id="app_icons">
+					<div class="application">
+						<div class="icon">
+							<img src="https://img1.baidu.com/it/u=1398893469,1396882057&amp;fm=26&amp;fmt=auto&amp;gp=0.jpg">
+						</div>	
+						<div class="icon_text">itallq</div>
+					</div>
+				</div>
+				<div id="chat_window">
+					<div id="chat_window_titleBar">
+						<div id="chat_window_title">
+							{{appTitle}}  -{{username}}
+						</div>
+						<div id="chat_window_control_buttons">
+							<button id="chat_window_info_button">
+								<i class="fa fa-info" aria-hidden="true"></i>
+							</button>
+							<button id="chat_window_minimize_button">
+								<i class="fa fa-window-minimize" aria-hidden="true"></i>
+								</button>
+							<button id="chat_window_suit_button">
+								<i class="fa fa-window-maximize" aria-hidden="true"></i>
+							</button>
+							<button id="chat_window_close_button">
+								<i class="fa fa-times" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
+					<div id="chat_window_content">
+						<ul>
+							<li v-for="msg in messages">
+								<div v-if="msg.type==1" class="message_user">
+									<span class="user">{{msg.username}}</span>
+									<span class="time">{{msg.time}}</span>
+									<div>{{msg.message}}</div>
+									<br/>
+								</div>
+								<div v-else-if="msg.type==0" class="message_sys">
+									<span class="time">{{msg.time}}</span>
+									<span>{{msg.message}}</span>
+									<br/><br/>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div id="chat_user_area">
+						<textarea id="chat_window_message_editor" v-model="editText" @keydown.enter.prevent="sendMessage()"></textarea>
+						<button id="chat_send_button" @click="sendMessage()">SEND</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/app.js"></script>
+</html>
