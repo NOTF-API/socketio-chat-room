@@ -1,12 +1,11 @@
 var app=new Vue({
-	el:"#chat_app",
+	el:"#app",
 	data:{
 		appTitle:"itallq",
 		editText:"",
 		maxMessageCount:10,
 		nowMessageCount:0,
-		messages:[	
-		],
+		messages:[]
 	},
 	methods:{
 		sendMessage:function(){

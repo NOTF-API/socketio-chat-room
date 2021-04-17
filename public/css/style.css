@@ -1,6 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	font-family: "Open Sans", sans-serif;
 }
 
 ul,li{list-style:none}
@@ -9,7 +10,7 @@ body{
 	overflow: hidden;
 }
 
-#chat_app{
+#app{
 	position: absolute;
 	left: 0;
 	top: 0;

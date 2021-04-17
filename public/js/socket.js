@@ -1,4 +1,4 @@
-var socket = io("http://192.168.1.166:3000");
+var socket = io("http://localhost:3000");//set your own address
 	
 socket.on('connection',function(){
 	alert(1)

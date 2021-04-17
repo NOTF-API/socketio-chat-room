@@ -7,12 +7,12 @@ $(document).ready(function(){
 		let nowY=parseInt(app_window.css("top"));
 		let sx=e.pageX;
 		let sy=e.pageY;
-		$("#chat_app").mouseup(function(e){
+		$("#app").mouseup(function(e){
 			let dx=e.pageX;
 			let dy=e.pageY;
 			app_window.css("left",nowX+(dx-sx));
 			app_window.css("top",nowY+(dy-sy));
-			$("#chat_app").unbind("mouseup");
+			$("#app").unbind("mouseup");
 			$("body").css("cursor","default");
 		});
 	});
