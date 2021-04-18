@@ -13,10 +13,6 @@ socket.on('disconnect', function(){
   })
 }); 
 
-socket.on("broadcast",function(msg){
-	console.log(msg);
-})
-
 socket.on("message",function(msg){
 	app.messages.push(msg);
   if(msg.online){
