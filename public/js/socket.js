@@ -18,7 +18,10 @@ socket.on("broadcast",function(msg){
 })
 
 socket.on("message",function(msg){
-	app.messages.push(msg)
+	app.messages.push(msg);
+  if(msg.online){
+    app.online=msg.online;
+  }
 })
 
 

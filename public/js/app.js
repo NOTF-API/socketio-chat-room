@@ -3,6 +3,7 @@ var app=new Vue({
 	data:{
 		appTitle:"itallq",
 		editText:"",
+    online:0,
 		maxMessageCount:10,
 		nowMessageCount:0,
 		messages:[]
@@ -27,7 +28,7 @@ var app=new Vue({
 	},
 	computed:{
 		username:function(){
-			return "GUEST"+new Date().getTime();
+			return "游客"+new Date().getTime();
 		}
 	},
 	watch:{
