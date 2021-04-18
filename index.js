@@ -3,7 +3,7 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server,{
-  cors:"127.0.0.1:3000"
+  cors:"127.0.0.1:80"
 });
 
 app.use(express.static(__dirname + '/public'));
@@ -62,6 +62,6 @@ io.on('connection', (socket) => {
 
 });
 
-server.listen(3000, () => {
-  console.log('listening on *:3000');
+server.listen(80, () => {
+  console.log('listening on *:80');
 });
