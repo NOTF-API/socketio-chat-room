@@ -21,6 +21,26 @@ url地址请改为本机地址
 ```js
 var socket = io("http://192.168.1.5:3000");
 ```
+请修改index.js中
+
+cors地址请改为本机地址
+
+如：本机为192.168.1.5,端口为3000
+
+请修改为
+
+```js
+const io = require('socket.io')(server,{
+  cors:"192.168.1.5:3000"
+});
+```
+修改
+
+```js
+server.listen(3000, () => {
+  console.log('listening on *:3000');
+});
+```
 
 ## 运行方法
 
