@@ -44,6 +44,7 @@ io.on('connection', (socket) => {
 
   //接收到该客户端发来的msg后
   socket.on('message', (msg) => {
+    console.log("来自"+msg.username+"的消息:"+msg.message);
     //对该用户:
     socket.emit("message",{
       type:1,
