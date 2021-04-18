@@ -3,7 +3,7 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server,{
-  cors:"192.168.1.8:80"
+  cors:"127.0.0.1:3000"
 });
 
 app.use(express.static(__dirname + '/public'));
