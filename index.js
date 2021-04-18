@@ -11,6 +11,7 @@ let online=0;
 
 //有客户端连接后
 io.on('connection', (socket) => {
+  console.log("一名用户加入了连接,当前数量:"+online);
   online++;
   //对该用户
   socket.emit("message",{
@@ -30,6 +31,7 @@ io.on('connection', (socket) => {
   
   //该客户端断开连接后
   socket.on('disconnect', () => {
+    console.log("一名用户断开了连接,当前数量:"+online);
     online--;
     //对该用户 无操作
 
